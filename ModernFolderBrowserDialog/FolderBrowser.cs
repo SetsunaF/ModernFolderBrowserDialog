@@ -47,9 +47,9 @@ namespace ModernFolderBrowserDialog
         /// <summary>
         /// Creates a new instance of the <see cref="VistaFolderBrowserDialog" /> class.
         /// </summary>
-        public FolderBrowser()
+        public FolderBrowser(bool classic=false)
         {
-            if (!IsVistaFolderDialogSupported)
+            if (classic || !IsVistaFolderDialogSupported)
                 _downlevelDialog = new FolderBrowserDialog();
             else
                 Reset();
